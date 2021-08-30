@@ -41,7 +41,7 @@ export default function Home() {
   const [mydata, setData] = useState("Default Hello");
 
   useEffect(() => {
-    console.log("useEffect Called");
+    //console.log("useEffect Called");
     (async()=>{
     const response = await fetch(`/.netlify/functions/hello?name=from Serverless Function`)
      const data =  response.json();
@@ -52,6 +52,6 @@ export default function Home() {
 
   return <div>
     <div>Hello world with Gatsby from Netlify!</div>
-    <div>{mydata.message}</div>
+    <div>{mydata && mydata.message}</div>
     </div>
 }
