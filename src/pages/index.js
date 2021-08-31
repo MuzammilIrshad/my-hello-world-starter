@@ -45,13 +45,13 @@ export default function Home() {
     (async()=>{
     const response = await fetch(`/.netlify/functions/hello?name=from Serverless Function`)
      const data =  response.json();
-           setData(data.message)
+           setData(data)
     })();
   }, []);
-      console.log(mydata)
+      console.log(mydata.message)
 
   return <div>
     <div>Hello world with Gatsby from Netlify!</div>
-    <div>{mydata}</div>
+    <div>{mydata.message}</div>
     </div>
 }
