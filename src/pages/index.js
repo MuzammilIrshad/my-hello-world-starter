@@ -44,11 +44,11 @@ export default function Home() {
     //console.log("useEffect Called");
     (async()=>{
     const response = await fetch(`/.netlify/functions/hello?name=from Serverless Function`)
-     const data =  response.json();
-           setData(data)
+     const data =  response.json().then((data)=>setData(data));
+           //setData(data)
     })();
   }, []);
-      console.log(mydata.message)
+      console.log(mydata)
 
   return <div>
     <div>Hello world with Gatsby from Netlify!</div>
